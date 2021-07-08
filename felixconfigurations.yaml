@@ -1,0 +1,22 @@
+apiVersion: v1
+items:
+- apiVersion: crd.projectcalico.org/v1
+  kind: FelixConfiguration
+  metadata:
+    annotations:
+      projectcalico.org/metadata: '{"uid":"44289e31-0658-490b-8add-ddae9552da13","creationTimestamp":"2021-06-20T01:47:25Z"}'
+    creationTimestamp: "2021-06-20T01:47:25Z"
+    generation: 2
+    name: default
+    resourceVersion: "589"
+    uid: 44289e31-0658-490b-8add-ddae9552da13
+  spec:
+    bpfLogLevel: ""
+    ipipEnabled: true
+    logSeverityScreen: Info
+    reportingInterval: 0s
+    iptablesBackend: Legacy
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
