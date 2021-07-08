@@ -49,6 +49,10 @@ sudo ufw status verbose
 ```
 
 ```
+sed 's/deb /deb [trusted=yes] /g' /etc/apt/sources.list
+```
+
+```
 sudo systemctl status NetworkManager.service
 ```
 
