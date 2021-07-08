@@ -25,6 +25,15 @@ spec:
 
 k -n kube-system get all -l=k8s-app=calico-node
 k -n kube-system logs -l=k8s-app=calico-node -f
+
+
+k -n kube-system get daemonset.apps/calico-node -o yaml | grep "name: IP" -C10
+k -n kube-system set env daemonset.apps/calico-node IP_AUTODETECTION_METHOD=interface=eth1
+k -n kube-system set env daemonset.apps/calico-node IP_AUTODETECTION_METHOD="interface=eth.*"
+k -n kube-system set env daemonset.apps/calico-node IP_AUTODETECTION_METHOD=can-reach=8.8.8.8
+
+
+k -n kube-system rollout restart daemonset calico-node
 ```
 
 
@@ -42,12 +51,7 @@ $ vim /etc/docker/daemon.json
 ```shell
 scp vagrant@10.0.0.10:~/.kube/config kubeconfig
 
-
-
-source .envrc
-
-Absolute Path: /Users/***/Code/vagrant/ubuntu-21.04-arm64-parallels
--rw-------  1 ***  staff  5568 20 Jun 02:33 /Users/***/Code/vagrant/ubuntu-21.04-arm64-parallels/kubeconfig
+source init.sh
 ```
 
 ### Metrics Server

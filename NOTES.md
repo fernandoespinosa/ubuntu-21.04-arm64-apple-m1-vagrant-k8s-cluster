@@ -51,3 +51,7 @@ sudo ufw status verbose
 ```
 sudo systemctl status NetworkManager.service
 ```
+
+```shell
+kubeadm join 10.0.0.10:6443 --token oedfhk.swddur6osdkwvu5t --discovery-token-ca-cert-hash sha256:62d5f7c2528cd8d2c6c2da98aa9c5442714e5160110dbbebb77f3bb1a2717825
+```
