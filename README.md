@@ -40,7 +40,7 @@ k -n kube-system rollout restart daemonset calico-node
 # worker
 
 ```shell
-$ vim /etc/docker/daemon.json
+sudo vim /etc/docker/daemon.json
 {
   "insecure-registries": ["10.0.0.1:5000"]
 }
